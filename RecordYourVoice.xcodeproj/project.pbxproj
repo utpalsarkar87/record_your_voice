@@ -1,0 +1,899 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B44564E1C8E6A0A526B7947 /* Pods_RecordYourVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2C73B4C0FD41DF2702246F /* Pods_RecordYourVoice.framework */; };
+		3F63CDC4013C2249156417FD /* Pods_RecordYourVoiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD80658D42155073D607398 /* Pods_RecordYourVoiceTests.framework */; };
+		5F40068A26329D8F0068A6D6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F40068926329D8F0068A6D6 /* UIViewController.swift */; };
+		5F6CF969263341AF00136C35 /* PlayAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6CF968263341AF00136C35 /* PlayAudioViewController.swift */; };
+		5FA26E1E2631F8DE00F1AF40 /* AudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA26E1D2631F8DE00F1AF40 /* AudioListTableViewCell.swift */; };
+		5FA26E232631FCA600F1AF40 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA26E222631FCA600F1AF40 /* UIViewExtension.swift */; };
+		5FA4B7132631AB6100B818F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B7122631AB6100B818F1 /* AppDelegate.swift */; };
+		5FA4B7152631AB6100B818F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B7142631AB6100B818F1 /* SceneDelegate.swift */; };
+		5FA4B7172631AB6100B818F1 /* YourVoiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B7162631AB6100B818F1 /* YourVoiceListViewController.swift */; };
+		5FA4B71A2631AB6100B818F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4B7182631AB6100B818F1 /* Main.storyboard */; };
+		5FA4B71D2631AB6100B818F1 /* RecordYourVoice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B71B2631AB6100B818F1 /* RecordYourVoice.xcdatamodeld */; };
+		5FA4B71F2631AB6400B818F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4B71E2631AB6400B818F1 /* Assets.xcassets */; };
+		5FA4B7222631AB6400B818F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4B7202631AB6400B818F1 /* LaunchScreen.storyboard */; };
+		5FA4B72D2631AB6500B818F1 /* RecordYourVoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B72C2631AB6500B818F1 /* RecordYourVoiceTests.swift */; };
+		5FA4B7382631AB6500B818F1 /* RecordYourVoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B7372631AB6500B818F1 /* RecordYourVoiceUITests.swift */; };
+		5FA4B7552631AC4800B818F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4B7542631AC4800B818F1 /* BaseViewController.swift */; };
+		5FCEF68B2632CC8700218E8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6872632CC8700218E8C /* PersistenceManager.swift */; };
+		5FCEF68C2632CC8700218E8C /* ContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6882632CC8700218E8C /* ContextManager.swift */; };
+		5FCEF68E2632CC8700218E8C /* DatastoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF68A2632CC8700218E8C /* DatastoreCoordinator.swift */; };
+		5FCEF6962632CCC900218E8C /* RYVCoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6952632CCC900218E8C /* RYVCoreDataController.swift */; };
+		5FCEF6A32632D7B600218E8C /* AudioRecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6A22632D7B600218E8C /* AudioRecordList.swift */; };
+		5FCEF6A82632DC7600218E8C /* EntityTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6A72632DC7600218E8C /* EntityTypes.swift */; };
+		5FCEF6AD2632DE2F00218E8C /* AudioFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEF6AC2632DE2F00218E8C /* AudioFileData.swift */; };
+		5FF8C7B826340516007B05D9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8C7B726340516007B05D9 /* Common.swift */; };
+		5FF8C7D8263597DD007B05D9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8C7D7263597DD007B05D9 /* Constant.swift */; };
+		63D6E3589F4D849E9A436EB4 /* Pods_RecordYourVoice_RecordYourVoiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F646CC0578E0CA67F186AD5 /* Pods_RecordYourVoice_RecordYourVoiceUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FA4B7292631AB6500B818F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FA4B7072631AB6000B818F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FA4B70E2631AB6100B818F1;
+			remoteInfo = RecordYourVoice;
+		};
+		5FA4B7342631AB6500B818F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FA4B7072631AB6000B818F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FA4B70E2631AB6100B818F1;
+			remoteInfo = RecordYourVoice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F646CC0578E0CA67F186AD5 /* Pods_RecordYourVoice_RecordYourVoiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordYourVoice_RecordYourVoiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3609A2FA0EB57B5EFE491CE4 /* Pods-RecordYourVoice-RecordYourVoiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoice-RecordYourVoiceUITests.release.xcconfig"; path = "Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5C2C73B4C0FD41DF2702246F /* Pods_RecordYourVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordYourVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD80658D42155073D607398 /* Pods_RecordYourVoiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordYourVoiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F40068926329D8F0068A6D6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5F4006A92632B3860068A6D6 /* RecordYourVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecordYourVoice-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F6CF968263341AF00136C35 /* PlayAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudioViewController.swift; sourceTree = "<group>"; };
+		5FA26E1D2631F8DE00F1AF40 /* AudioListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListTableViewCell.swift; sourceTree = "<group>"; };
+		5FA26E222631FCA600F1AF40 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		5FA4B70F2631AB6100B818F1 /* RecordYourVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordYourVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4B7122631AB6100B818F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5FA4B7142631AB6100B818F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5FA4B7162631AB6100B818F1 /* YourVoiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourVoiceListViewController.swift; sourceTree = "<group>"; };
+		5FA4B7192631AB6100B818F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5FA4B71C2631AB6100B818F1 /* RecordYourVoice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordYourVoice.xcdatamodel; sourceTree = "<group>"; };
+		5FA4B71E2631AB6400B818F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5FA4B7212631AB6400B818F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FA4B7232631AB6400B818F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA4B7282631AB6500B818F1 /* RecordYourVoiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordYourVoiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4B72C2631AB6500B818F1 /* RecordYourVoiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordYourVoiceTests.swift; sourceTree = "<group>"; };
+		5FA4B72E2631AB6500B818F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA4B7332631AB6500B818F1 /* RecordYourVoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordYourVoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4B7372631AB6500B818F1 /* RecordYourVoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordYourVoiceUITests.swift; sourceTree = "<group>"; };
+		5FA4B7392631AB6500B818F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA4B7542631AC4800B818F1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5FCEF6872632CC8700218E8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		5FCEF6882632CC8700218E8C /* ContextManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextManager.swift; sourceTree = "<group>"; };
+		5FCEF68A2632CC8700218E8C /* DatastoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatastoreCoordinator.swift; sourceTree = "<group>"; };
+		5FCEF6952632CCC900218E8C /* RYVCoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYVCoreDataController.swift; sourceTree = "<group>"; };
+		5FCEF6A22632D7B600218E8C /* AudioRecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordList.swift; sourceTree = "<group>"; };
+		5FCEF6A72632DC7600218E8C /* EntityTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTypes.swift; sourceTree = "<group>"; };
+		5FCEF6AC2632DE2F00218E8C /* AudioFileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileData.swift; sourceTree = "<group>"; };
+		5FF8C7B726340516007B05D9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		5FF8C7D7263597DD007B05D9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7BA08D9648FDFB821ABCF773 /* Pods-RecordYourVoiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoiceTests.release.xcconfig"; path = "Target Support Files/Pods-RecordYourVoiceTests/Pods-RecordYourVoiceTests.release.xcconfig"; sourceTree = "<group>"; };
+		B692BF82C9D9ED5B0152CA9C /* Pods-RecordYourVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoice.release.xcconfig"; path = "Target Support Files/Pods-RecordYourVoice/Pods-RecordYourVoice.release.xcconfig"; sourceTree = "<group>"; };
+		BEE1168BD508C9278778C7C7 /* Pods-RecordYourVoice-RecordYourVoiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoice-RecordYourVoiceUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC554B0350B56F0D1213DF11 /* Pods-RecordYourVoiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoiceTests.debug.xcconfig"; path = "Target Support Files/Pods-RecordYourVoiceTests/Pods-RecordYourVoiceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1FA516DB377E1B77D7DD366 /* Pods-RecordYourVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordYourVoice.debug.xcconfig"; path = "Target Support Files/Pods-RecordYourVoice/Pods-RecordYourVoice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FA4B70C2631AB6100B818F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B44564E1C8E6A0A526B7947 /* Pods_RecordYourVoice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B7252631AB6500B818F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F63CDC4013C2249156417FD /* Pods_RecordYourVoiceTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B7302631AB6500B818F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D6E3589F4D849E9A436EB4 /* Pods_RecordYourVoice_RecordYourVoiceUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4968D31479D25C91829D086F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C2C73B4C0FD41DF2702246F /* Pods_RecordYourVoice.framework */,
+				1F646CC0578E0CA67F186AD5 /* Pods_RecordYourVoice_RecordYourVoiceUITests.framework */,
+				5DD80658D42155073D607398 /* Pods_RecordYourVoiceTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FA26E1C2631F8B500F1AF40 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				5FA26E1D2631F8DE00F1AF40 /* AudioListTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		5FA4B7062631AB6000B818F1 = {
+			isa = PBXGroup;
+			children = (
+				5FA4B7112631AB6100B818F1 /* RecordYourVoice */,
+				5FA4B72B2631AB6500B818F1 /* RecordYourVoiceTests */,
+				5FA4B7362631AB6500B818F1 /* RecordYourVoiceUITests */,
+				5FA4B7102631AB6100B818F1 /* Products */,
+				DCAE98646FE3CE9B6BC5FA71 /* Pods */,
+				4968D31479D25C91829D086F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5FA4B7102631AB6100B818F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B70F2631AB6100B818F1 /* RecordYourVoice.app */,
+				5FA4B7282631AB6500B818F1 /* RecordYourVoiceTests.xctest */,
+				5FA4B7332631AB6500B818F1 /* RecordYourVoiceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FA4B7112631AB6100B818F1 /* RecordYourVoice */ = {
+			isa = PBXGroup;
+			children = (
+				5FF8C7B626340501007B05D9 /* HelperClass */,
+				5FCEF6862632CC5E00218E8C /* CoreData */,
+				5FA26E1C2631F8B500F1AF40 /* CustomCells */,
+				5FA4B75C2631AC7E00B818F1 /* Extensions */,
+				5FA4B75B2631AC7600B818F1 /* Views */,
+				5FA4B75A2631AC7000B818F1 /* Model */,
+				5FA4B7592631AC6700B818F1 /* Assets */,
+				5FA4B7532631ABCF00B818F1 /* Controllers */,
+				5FA4B7522631ABAC00B818F1 /* AppDelegate */,
+				5FA4B7232631AB6400B818F1 /* Info.plist */,
+				5F4006A92632B3860068A6D6 /* RecordYourVoice-Bridging-Header.h */,
+			);
+			path = RecordYourVoice;
+			sourceTree = "<group>";
+		};
+		5FA4B72B2631AB6500B818F1 /* RecordYourVoiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B72C2631AB6500B818F1 /* RecordYourVoiceTests.swift */,
+				5FA4B72E2631AB6500B818F1 /* Info.plist */,
+			);
+			path = RecordYourVoiceTests;
+			sourceTree = "<group>";
+		};
+		5FA4B7362631AB6500B818F1 /* RecordYourVoiceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B7372631AB6500B818F1 /* RecordYourVoiceUITests.swift */,
+				5FA4B7392631AB6500B818F1 /* Info.plist */,
+			);
+			path = RecordYourVoiceUITests;
+			sourceTree = "<group>";
+		};
+		5FA4B7522631ABAC00B818F1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B7122631AB6100B818F1 /* AppDelegate.swift */,
+				5FA4B7142631AB6100B818F1 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5FA4B7532631ABCF00B818F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B7542631AC4800B818F1 /* BaseViewController.swift */,
+				5FA4B7162631AB6100B818F1 /* YourVoiceListViewController.swift */,
+				5F6CF968263341AF00136C35 /* PlayAudioViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FA4B7592631AC6700B818F1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B71B2631AB6100B818F1 /* RecordYourVoice.xcdatamodeld */,
+				5FA4B71E2631AB6400B818F1 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5FA4B75A2631AC7000B818F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FCEF6A22632D7B600218E8C /* AudioRecordList.swift */,
+				5FCEF6A72632DC7600218E8C /* EntityTypes.swift */,
+				5FCEF6AC2632DE2F00218E8C /* AudioFileData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FA4B75B2631AC7600B818F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4B7202631AB6400B818F1 /* LaunchScreen.storyboard */,
+				5FA4B7182631AB6100B818F1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5FA4B75C2631AC7E00B818F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F40068926329D8F0068A6D6 /* UIViewController.swift */,
+				5FA26E222631FCA600F1AF40 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5FCEF6862632CC5E00218E8C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5FCEF6952632CCC900218E8C /* RYVCoreDataController.swift */,
+				5FCEF6882632CC8700218E8C /* ContextManager.swift */,
+				5FCEF68A2632CC8700218E8C /* DatastoreCoordinator.swift */,
+				5FCEF6872632CC8700218E8C /* PersistenceManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5FF8C7B626340501007B05D9 /* HelperClass */ = {
+			isa = PBXGroup;
+			children = (
+				5FF8C7B726340516007B05D9 /* Common.swift */,
+				5FF8C7D7263597DD007B05D9 /* Constant.swift */,
+			);
+			path = HelperClass;
+			sourceTree = "<group>";
+		};
+		DCAE98646FE3CE9B6BC5FA71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1FA516DB377E1B77D7DD366 /* Pods-RecordYourVoice.debug.xcconfig */,
+				B692BF82C9D9ED5B0152CA9C /* Pods-RecordYourVoice.release.xcconfig */,
+				BEE1168BD508C9278778C7C7 /* Pods-RecordYourVoice-RecordYourVoiceUITests.debug.xcconfig */,
+				3609A2FA0EB57B5EFE491CE4 /* Pods-RecordYourVoice-RecordYourVoiceUITests.release.xcconfig */,
+				DC554B0350B56F0D1213DF11 /* Pods-RecordYourVoiceTests.debug.xcconfig */,
+				7BA08D9648FDFB821ABCF773 /* Pods-RecordYourVoiceTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FA4B70E2631AB6100B818F1 /* RecordYourVoice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FA4B73C2631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoice" */;
+			buildPhases = (
+				37104AE6AF24B612D84A6988 /* [CP] Check Pods Manifest.lock */,
+				5FA4B70B2631AB6100B818F1 /* Sources */,
+				5FA4B70C2631AB6100B818F1 /* Frameworks */,
+				5FA4B70D2631AB6100B818F1 /* Resources */,
+				CCFE7B4DE99B46CC8B08C11F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordYourVoice;
+			productName = RecordYourVoice;
+			productReference = 5FA4B70F2631AB6100B818F1 /* RecordYourVoice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FA4B7272631AB6500B818F1 /* RecordYourVoiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FA4B73F2631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoiceTests" */;
+			buildPhases = (
+				0ED48BCCB3E63DFFE47689FC /* [CP] Check Pods Manifest.lock */,
+				5FA4B7242631AB6500B818F1 /* Sources */,
+				5FA4B7252631AB6500B818F1 /* Frameworks */,
+				5FA4B7262631AB6500B818F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FA4B72A2631AB6500B818F1 /* PBXTargetDependency */,
+			);
+			name = RecordYourVoiceTests;
+			productName = RecordYourVoiceTests;
+			productReference = 5FA4B7282631AB6500B818F1 /* RecordYourVoiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5FA4B7322631AB6500B818F1 /* RecordYourVoiceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FA4B7422631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoiceUITests" */;
+			buildPhases = (
+				6FEA39A79BF4688FFBE91F48 /* [CP] Check Pods Manifest.lock */,
+				5FA4B72F2631AB6500B818F1 /* Sources */,
+				5FA4B7302631AB6500B818F1 /* Frameworks */,
+				5FA4B7312631AB6500B818F1 /* Resources */,
+				1D6AF5FCB902472489C7730B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FA4B7352631AB6500B818F1 /* PBXTargetDependency */,
+			);
+			name = RecordYourVoiceUITests;
+			productName = RecordYourVoiceUITests;
+			productReference = 5FA4B7332631AB6500B818F1 /* RecordYourVoiceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FA4B7072631AB6000B818F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5FA4B70E2631AB6100B818F1 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					5FA4B7272631AB6500B818F1 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 5FA4B70E2631AB6100B818F1;
+					};
+					5FA4B7322631AB6500B818F1 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 5FA4B70E2631AB6100B818F1;
+					};
+				};
+			};
+			buildConfigurationList = 5FA4B70A2631AB6100B818F1 /* Build configuration list for PBXProject "RecordYourVoice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FA4B7062631AB6000B818F1;
+			productRefGroup = 5FA4B7102631AB6100B818F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FA4B70E2631AB6100B818F1 /* RecordYourVoice */,
+				5FA4B7272631AB6500B818F1 /* RecordYourVoiceTests */,
+				5FA4B7322631AB6500B818F1 /* RecordYourVoiceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FA4B70D2631AB6100B818F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4B7222631AB6400B818F1 /* LaunchScreen.storyboard in Resources */,
+				5FA4B71F2631AB6400B818F1 /* Assets.xcassets in Resources */,
+				5FA4B71A2631AB6100B818F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B7262631AB6500B818F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B7312631AB6500B818F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ED48BCCB3E63DFFE47689FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecordYourVoiceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D6AF5FCB902472489C7730B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37104AE6AF24B612D84A6988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecordYourVoice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FEA39A79BF4688FFBE91F48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecordYourVoice-RecordYourVoiceUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCFE7B4DE99B46CC8B08C11F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice/Pods-RecordYourVoice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice/Pods-RecordYourVoice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice/Pods-RecordYourVoice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FA4B70B2631AB6100B818F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FCEF68B2632CC8700218E8C /* PersistenceManager.swift in Sources */,
+				5FA26E1E2631F8DE00F1AF40 /* AudioListTableViewCell.swift in Sources */,
+				5F40068A26329D8F0068A6D6 /* UIViewController.swift in Sources */,
+				5FCEF6962632CCC900218E8C /* RYVCoreDataController.swift in Sources */,
+				5FA4B7552631AC4800B818F1 /* BaseViewController.swift in Sources */,
+				5FA4B71D2631AB6100B818F1 /* RecordYourVoice.xcdatamodeld in Sources */,
+				5FA4B7172631AB6100B818F1 /* YourVoiceListViewController.swift in Sources */,
+				5FA4B7132631AB6100B818F1 /* AppDelegate.swift in Sources */,
+				5FCEF68E2632CC8700218E8C /* DatastoreCoordinator.swift in Sources */,
+				5FCEF6AD2632DE2F00218E8C /* AudioFileData.swift in Sources */,
+				5FCEF6A82632DC7600218E8C /* EntityTypes.swift in Sources */,
+				5FF8C7D8263597DD007B05D9 /* Constant.swift in Sources */,
+				5FA26E232631FCA600F1AF40 /* UIViewExtension.swift in Sources */,
+				5FCEF68C2632CC8700218E8C /* ContextManager.swift in Sources */,
+				5FF8C7B826340516007B05D9 /* Common.swift in Sources */,
+				5FA4B7152631AB6100B818F1 /* SceneDelegate.swift in Sources */,
+				5FCEF6A32632D7B600218E8C /* AudioRecordList.swift in Sources */,
+				5F6CF969263341AF00136C35 /* PlayAudioViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B7242631AB6500B818F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4B72D2631AB6500B818F1 /* RecordYourVoiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4B72F2631AB6500B818F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4B7382631AB6500B818F1 /* RecordYourVoiceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FA4B72A2631AB6500B818F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FA4B70E2631AB6100B818F1 /* RecordYourVoice */;
+			targetProxy = 5FA4B7292631AB6500B818F1 /* PBXContainerItemProxy */;
+		};
+		5FA4B7352631AB6500B818F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FA4B70E2631AB6100B818F1 /* RecordYourVoice */;
+			targetProxy = 5FA4B7342631AB6500B818F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5FA4B7182631AB6100B818F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FA4B7192631AB6100B818F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5FA4B7202631AB6400B818F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FA4B7212631AB6400B818F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5FA4B73A2631AB6500B818F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5FA4B73B2631AB6500B818F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FA4B73D2631AB6500B818F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1FA516DB377E1B77D7DD366 /* Pods-RecordYourVoice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RecordYourVoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordYourVoice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/senrysamacmini/Desktop/Projects/record_your_voice/RecordYourVoice/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FA4B73E2631AB6500B818F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B692BF82C9D9ED5B0152CA9C /* Pods-RecordYourVoice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RecordYourVoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordYourVoice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/senrysamacmini/Desktop/Projects/record_your_voice/RecordYourVoice/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5FA4B7402631AB6500B818F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC554B0350B56F0D1213DF11 /* Pods-RecordYourVoiceTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecordYourVoiceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shadowfax.RecordYourVoiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordYourVoice.app/RecordYourVoice";
+			};
+			name = Debug;
+		};
+		5FA4B7412631AB6500B818F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA08D9648FDFB821ABCF773 /* Pods-RecordYourVoiceTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecordYourVoiceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shadowfax.RecordYourVoiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordYourVoice.app/RecordYourVoice";
+			};
+			name = Release;
+		};
+		5FA4B7432631AB6500B818F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE1168BD508C9278778C7C7 /* Pods-RecordYourVoice-RecordYourVoiceUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecordYourVoiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shadowfax.RecordYourVoiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecordYourVoice;
+			};
+			name = Debug;
+		};
+		5FA4B7442631AB6500B818F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3609A2FA0EB57B5EFE491CE4 /* Pods-RecordYourVoice-RecordYourVoiceUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecordYourVoiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = shadowfax.RecordYourVoiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecordYourVoice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5FA4B70A2631AB6100B818F1 /* Build configuration list for PBXProject "RecordYourVoice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4B73A2631AB6500B818F1 /* Debug */,
+				5FA4B73B2631AB6500B818F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FA4B73C2631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4B73D2631AB6500B818F1 /* Debug */,
+				5FA4B73E2631AB6500B818F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FA4B73F2631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4B7402631AB6500B818F1 /* Debug */,
+				5FA4B7412631AB6500B818F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FA4B7422631AB6500B818F1 /* Build configuration list for PBXNativeTarget "RecordYourVoiceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4B7432631AB6500B818F1 /* Debug */,
+				5FA4B7442631AB6500B818F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5FA4B71B2631AB6100B818F1 /* RecordYourVoice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FA4B71C2631AB6100B818F1 /* RecordYourVoice.xcdatamodel */,
+			);
+			currentVersion = 5FA4B71C2631AB6100B818F1 /* RecordYourVoice.xcdatamodel */;
+			path = RecordYourVoice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5FA4B7072631AB6000B818F1 /* Project object */;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AudioRecordList" representedClassName="AudioRecordList" syncable="YES" codeGenerationType="class">
+        <attribute name="date_created" optional="YES" attributeType="String"/>
+        <attribute name="date_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="file_length" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="file_name" optional="YES" attributeType="String"/>
+        <attribute name="file_path" optional="YES" attributeType="String"/>
+        <attribute name="recently_deleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="AudioRecordList" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
+</model>

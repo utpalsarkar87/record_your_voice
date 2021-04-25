@@ -1,0 +1,24 @@
+PODS:
+  - IQAudioRecorderController (1.2.3):
+    - SCSiriWaveformView
+  - SCSiriWaveformView (1.1.1)
+  - SwiftSiriWaveformView (2.4.0)
+
+DEPENDENCIES:
+  - IQAudioRecorderController
+  - SwiftSiriWaveformView
+
+SPEC REPOS:
+  trunk:
+    - IQAudioRecorderController
+    - SCSiriWaveformView
+    - SwiftSiriWaveformView
+
+SPEC CHECKSUMS:
+  IQAudioRecorderController: 69a67c2e0b87bd8746cbb4de175fd7a0bf820009
+  SCSiriWaveformView: 15b9dd6f94c7536e2032b34a35c6ff74d38c7411
+  SwiftSiriWaveformView: baa04ed2089e854af00ea54c38a7700ca43d7ae0
+
+PODFILE CHECKSUM: 2c058adda8fa464d6869e663b35861854b4165ff
+
+COCOAPODS: 1.9.3

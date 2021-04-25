@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-RecordYourVoice-RecordYourVoiceUITests/Pods-RecordYourVoice-RecordYourVoiceUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQAudioRecorderController/IQAudioRecorderController.framework
+${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework
+${BUILT_PRODUCTS_DIR}/SwiftSiriWaveformView/SwiftSiriWaveformView.framework
