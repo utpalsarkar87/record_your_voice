@@ -732,14 +732,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5RHBDNN9YP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecordYourVoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextdoorhub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordyourvoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -754,14 +754,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5RHBDNN9YP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecordYourVoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextdoorhub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordyourvoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
