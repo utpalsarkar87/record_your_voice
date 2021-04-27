@@ -79,4 +79,15 @@ extension UIViewController{
             }
         return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
     }
+    
+    static func create<T: UIViewController>() -> T {
+        let name = String(describing: T.self)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: T.self))
+        if let viewController = storyboard.instantiateViewController(withIdentifier: name) as? T {
+            return viewController
+        } else {
+            fatalError("Cannot find view controller")
+        }
+    }
 }

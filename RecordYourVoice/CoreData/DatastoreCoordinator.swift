@@ -1,9 +1,6 @@
 //
 //  DatastoreCoordinator.swift
-//  APA
 //
-//  Created by Senrysa on 22/04/21.
-//  Copyright © 2020 Senrysa Technologies (P) Ltd. All rights reserved.
 //
 
 import Foundation

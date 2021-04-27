@@ -1,8 +1,7 @@
 //
 //  BaseViewController.swift
-//  MarketWatch
+//  RecordYourVoice
 //
-//  Created by Senrysa on 28/02/21.
 //
 
 import UIKit
@@ -22,3 +21,4 @@ class BaseViewController: UIViewController {
         
     }
 }
+

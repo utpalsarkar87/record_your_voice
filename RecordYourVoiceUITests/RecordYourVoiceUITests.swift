@@ -2,7 +2,6 @@
 //  RecordYourVoiceUITests.swift
 //  RecordYourVoiceUITests
 //
-//  Created by Senrysa on 22/04/21.
 //
 
 import XCTest

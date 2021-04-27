@@ -2,7 +2,6 @@
 //  Common.swift
 //  RecordYourVoice
 //
-//  Created by Senrysa on 24/04/21.
 //
 
 import Foundation

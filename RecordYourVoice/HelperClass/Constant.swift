@@ -2,7 +2,6 @@
 //  Constant.swift
 //  RecordYourVoice
 //
-//  Created by Senrysa on 25/04/21.
 //
 
 import Foundation

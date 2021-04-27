@@ -2,22 +2,17 @@
 //  YourVoiceListViewController.swift
 //  RecordYourVoice
 //
-//  Created by Senrysa on 22/04/21.
 //
 
 import UIKit
-import IQAudioRecorderController
-import IQAudioRecorderController
 
 class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewControllerDelegate, IQAudioCropperViewControllerDelegate {
 
     @IBOutlet weak var tableViewVoiceList: UITableView!
     @IBOutlet weak var btnCreateNew: UIButton!
-    
-    var audioPlayList : [AudioRecordList] = []
-    let MAX_RECORD_DURATION : TimeInterval = 3599
-    var selectedIndex : Int? = -1
-    
+
+    var voiceListViewModel = YourVoiceListViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,7 +21,7 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
+        self.voiceListViewModel.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
         
         DispatchQueue.main.async {
             self.tableViewVoiceList.reloadData()
@@ -35,24 +30,22 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
 
     @IBAction func onClickCreateNewAudio(_ sender: UIButton) {
         
-        let recordController = IQAudioRecorderViewController()
+        let recordController = self.voiceListViewModel.getIQAudioRecorderViewController()
         recordController.delegate = self
-        recordController.maximumRecordDuration = MAX_RECORD_DURATION
-        recordController.allowCropping = false;
-        recordController.barStyle = .default;
         self.presentBlurredAudioRecorderViewControllerAnimated(recordController)
     }
     
-    func audioRecorderController(_ controller: IQAudioRecorderViewController, didFinishWithAudioAtPath filePath: String) {
-        
-        var audioData = AudioRecordsList()
-        audioData.fileName = "RYV_\(Common.getDateCreated())"
-        audioData.filePath = filePath
-        audioData.recentlyDeleted = false
-        audioData.fileLength = Common.getAudioFileLength(filePath: filePath)
-        audioData.dateCreated = Common.getDateCreated()
-        audioData.dateTime = Date()
-        
+    func audioRecorderController(_ controller: IQAudioRecorderViewController,
+                                 didFinishWithAudioAtPath filePath: String) {
+
+        let audioData = self.voiceListViewModel
+            .getAudioRecordList(fileName: "RYV_\(Common.getDateCreated())",
+                                filePath: filePath,
+                                recentlyDeleted: false,
+                                dateTime: Date(),
+                                fileLength: Common.getAudioFileLength(filePath: filePath),
+                                dateCreated: Common.getDateCreated())
+
         RYVCoreDataController.sharedInstance.saveAudioFileData(fileData: audioData)
         
         Common.SaveAudioFile(filePath,audioData.fileName ?? "") { (newPath) in
@@ -70,14 +63,16 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
         controller.dismiss(animated: true, completion: nil)
     }
     
-    func audioCropperController(_ controller: IQAudioCropperViewController, didFinishWithAudioAtPath filePath: String) {
-        var audioData = AudioRecordsList()
-        audioData.fileName = "RYV_\(Common.getDateCreated())"
-        audioData.filePath = filePath
-        audioData.recentlyDeleted = false
-        audioData.fileLength = Common.getAudioFileLength(filePath: filePath)
-        audioData.dateCreated = Common.getDateCreated()
-        audioData.dateTime = Date()
+    func audioCropperController(_ controller: IQAudioCropperViewController,
+                                didFinishWithAudioAtPath filePath: String) {
+
+        let audioData = self.voiceListViewModel
+            .getAudioRecordList(fileName: "RYV_\(Common.getDateCreated())",
+                                filePath: filePath,
+                                recentlyDeleted: false,
+                                dateTime: Date(),
+                                fileLength: Common.getAudioFileLength(filePath: filePath),
+                                dateCreated: Common.getDateCreated())
         
         RYVCoreDataController.sharedInstance.saveAudioFileData(fileData: audioData)
         
@@ -100,28 +95,23 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
 extension YourVoiceListViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.audioPlayList.count
+        return self.voiceListViewModel.audioPlayList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(cell: AudioListTableViewCell.self, for: indexPath, identifier: Constant.cellIdentifiers.audioListTableViewCell) as! AudioListTableViewCell
-        let playListObj = self.audioPlayList[indexPath.row]
-        cell.lblFileName.text = playListObj.file_name
-        cell.lblDateTime.text = playListObj.date_created
-        cell.lblAudioLength.text = Common.convertSecondsToMinutesSeconds(seconds: Int(playListObj.file_length))
+        cell.configure(audio: self.voiceListViewModel.audioPlayList[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "PlayAudioViewController") as! PlayAudioViewController
-        let playListObj = self.audioPlayList[indexPath.row]
+        let controller = PlayAudioViewController.create() as! PlayAudioViewController
+        let playListObj = self.voiceListViewModel.audioPlayList[indexPath.row]
         controller.audioURL = playListObj.file_path
         controller.audioFile = playListObj
         self.navigationController?.pushViewController(controller, animated: true)
@@ -157,25 +147,26 @@ extension YourVoiceListViewController : UITableViewDataSource, UITableViewDelega
         }
 
         func deleteData(at indexPath: IndexPath) {
-            print(indexPath.row)
-            let playListObj = self.audioPlayList[indexPath.row]
-            var audioData = AudioRecordsList()
-            audioData.fileName = playListObj.file_name
-            audioData.filePath = playListObj.file_path
-            audioData.recentlyDeleted = true
-            audioData.fileLength = playListObj.file_length
-            audioData.dateCreated = playListObj.date_created
-            audioData.dateTime = playListObj.date_time
+            let playListObj = self.voiceListViewModel.audioPlayList[indexPath.row]
+
+            let audioData = self.voiceListViewModel
+                .getAudioRecordList(fileName: playListObj.file_name,
+                                    filePath: playListObj.file_path,
+                                    recentlyDeleted: true,
+                                    dateTime: playListObj.date_time,
+                                    fileLength: playListObj.file_length,
+                                    dateCreated: playListObj.date_created)
+
             RYVCoreDataController.sharedInstance.saveAudioFileData(fileData: audioData)
-            self.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
+            self.voiceListViewModel.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
             DispatchQueue.main.async {
                 self.tableViewVoiceList.reloadData()
             }
         }
 
         func editData(at indexPath: IndexPath) {
-            self.selectedIndex = indexPath.row
-            let playListObj = self.audioPlayList[indexPath.row]
+            self.voiceListViewModel.selectedIndex = indexPath.row
+            let playListObj = self.voiceListViewModel.audioPlayList[indexPath.row]
             let cropController = IQAudioCropperViewController(filePath: Common.getAudioFileFromDocumentDirectory(fileName: playListObj.file_name ?? ""))
             cropController.delegate = self
             cropController.barStyle = .default

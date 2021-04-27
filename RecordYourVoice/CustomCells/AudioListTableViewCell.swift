@@ -2,7 +2,6 @@
 //  AudioListTableViewCell.swift
 //  RecordYourVoice
 //
-//  Created by Senrysa on 23/04/21.
 //
 
 import UIKit
@@ -22,6 +21,13 @@ class AudioListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func configure(audio: AudioRecordList) {
+        lblFileName.text = audio.file_name
+        lblDateTime.text = audio.date_created
+        lblAudioLength.text = Common
+            .convertSecondsToMinutesSeconds(seconds: Int(audio.file_length))
     }
 
 }

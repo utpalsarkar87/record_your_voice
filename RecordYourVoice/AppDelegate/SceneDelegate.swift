@@ -2,7 +2,6 @@
 //  SceneDelegate.swift
 //  RecordYourVoice
 //
-//  Created by Senrysa on 22/04/21.
 //
 
 import UIKit

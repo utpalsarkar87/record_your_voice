@@ -10,6 +10,7 @@
 		2B44564E1C8E6A0A526B7947 /* Pods_RecordYourVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2C73B4C0FD41DF2702246F /* Pods_RecordYourVoice.framework */; };
 		3F63CDC4013C2249156417FD /* Pods_RecordYourVoiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD80658D42155073D607398 /* Pods_RecordYourVoiceTests.framework */; };
 		5F40068A26329D8F0068A6D6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F40068926329D8F0068A6D6 /* UIViewController.swift */; };
+		5F5AFD162637C55300D4A3B9 /* YourVoiceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5AFD152637C55300D4A3B9 /* YourVoiceListViewModel.swift */; };
 		5F6CF969263341AF00136C35 /* PlayAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6CF968263341AF00136C35 /* PlayAudioViewController.swift */; };
 		5FA26E1E2631F8DE00F1AF40 /* AudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA26E1D2631F8DE00F1AF40 /* AudioListTableViewCell.swift */; };
 		5FA26E232631FCA600F1AF40 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA26E222631FCA600F1AF40 /* UIViewExtension.swift */; };
@@ -59,6 +60,7 @@
 		5DD80658D42155073D607398 /* Pods_RecordYourVoiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordYourVoiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F40068926329D8F0068A6D6 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		5F4006A92632B3860068A6D6 /* RecordYourVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecordYourVoice-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F5AFD152637C55300D4A3B9 /* YourVoiceListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourVoiceListViewModel.swift; sourceTree = "<group>"; };
 		5F6CF968263341AF00136C35 /* PlayAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudioViewController.swift; sourceTree = "<group>"; };
 		5FA26E1D2631F8DE00F1AF40 /* AudioListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListTableViewCell.swift; sourceTree = "<group>"; };
 		5FA26E222631FCA600F1AF40 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F5AFD112637C52E00D4A3B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F5AFD152637C55300D4A3B9 /* YourVoiceListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5FA26E1C2631F8B500F1AF40 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		5FA4B7112631AB6100B818F1 /* RecordYourVoice */ = {
 			isa = PBXGroup;
 			children = (
+				5F5AFD112637C52E00D4A3B9 /* ViewModel */,
 				5FF8C7B626340501007B05D9 /* HelperClass */,
 				5FCEF6862632CC5E00218E8C /* CoreData */,
 				5FA26E1C2631F8B500F1AF40 /* CustomCells */,
@@ -539,6 +550,7 @@
 				5FF8C7D8263597DD007B05D9 /* Constant.swift in Sources */,
 				5FA26E232631FCA600F1AF40 /* UIViewExtension.swift in Sources */,
 				5FCEF68C2632CC8700218E8C /* ContextManager.swift in Sources */,
+				5F5AFD162637C55300D4A3B9 /* YourVoiceListViewModel.swift in Sources */,
 				5FF8C7B826340516007B05D9 /* Common.swift in Sources */,
 				5FA4B7152631AB6100B818F1 /* SceneDelegate.swift in Sources */,
 				5FCEF6A32632D7B600218E8C /* AudioRecordList.swift in Sources */,
@@ -729,7 +741,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.recordYourVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/senrysamacmini/Desktop/Projects/record_your_voice/RecordYourVoice/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -751,7 +763,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.recordYourVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/senrysamacmini/Desktop/Projects/record_your_voice/RecordYourVoice/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RecordYourVoice/RecordYourVoice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
