@@ -51,6 +51,7 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
         Common.SaveAudioFile(filePath,audioData.fileName ?? "") { (newPath) in
             DispatchQueue.main.async {
                 controller.dismiss(animated: true) {
+                    self.voiceListViewModel.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
                     DispatchQueue.main.async {
                         self.tableViewVoiceList.reloadData()
                     }
@@ -79,6 +80,7 @@ class YourVoiceListViewController: BaseViewController, IQAudioRecorderViewContro
         Common.SaveAudioFile(filePath,audioData.fileName ?? "") { (newPath) in
             DispatchQueue.main.async {
                 controller.dismiss(animated: true) {
+                    self.voiceListViewModel.audioPlayList = RYVCoreDataController.sharedInstance.getAudioPlayList()
                     DispatchQueue.main.async {
                         self.tableViewVoiceList.reloadData()
                     }
@@ -167,11 +169,11 @@ extension YourVoiceListViewController : UITableViewDataSource, UITableViewDelega
         func editData(at indexPath: IndexPath) {
             self.voiceListViewModel.selectedIndex = indexPath.row
             let playListObj = self.voiceListViewModel.audioPlayList[indexPath.row]
-            let cropController = IQAudioCropperViewController(filePath: Common.getAudioFileFromDocumentDirectory(fileName: playListObj.file_name ?? ""))
+            let cropController = self.voiceListViewModel.getIQAudioCropperViewController(playListObj: playListObj)
             cropController.delegate = self
-            cropController.barStyle = .default
+            self.presentBlurredAudioCropperViewControllerAnimated(cropController)
             DispatchQueue.main.async {
-                self.presentBlurredAudioCropperViewControllerAnimated(cropController)
+                
             }
         }
 }

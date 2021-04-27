@@ -19,6 +19,12 @@ class YourVoiceListViewModel {
         recordController.barStyle = .default
         return recordController
     }
+    
+    func getIQAudioCropperViewController(playListObj: AudioRecordList) -> IQAudioCropperViewController {
+        let cropController = IQAudioCropperViewController(filePath: Common.getAudioFileFromDocumentDirectory(fileName: playListObj.file_name ?? ""))
+        cropController.barStyle = .default
+        return cropController
+    }
 
     func getAudioRecordList(fileName: String?,
                             filePath: String?,
